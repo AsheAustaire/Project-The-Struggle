@@ -2,3 +2,12 @@
 
 <%= link_to('View All Editors', editors_path) %> <br>
 <%= link_to('View All Languages', languages_path) %>
+
+
+<h2>Select a Company you would like to work for:</h2>
+
+
+<%=link_to "Google", language_path(Company.find_by(name: "Google").id)%>
+
+
+<%=link_to "Facebook", language_path(2)%>
