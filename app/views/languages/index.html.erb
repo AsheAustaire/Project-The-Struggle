@@ -1,0 +1,6 @@
+<h1>List of Languages</h1>
+
+<%@languages.each do |l|%>
+  <label>Name: </label>
+  <%=link_to l.name, language_path(l)%><br>
+<%end%>

@@ -1,0 +1,6 @@
+<h1>List of IDE's</h1>
+
+<%@editors.each do |e|%>
+  <label>Name: </label>
+  <%=link_to e.name, editor_path(e)%><br>
+<%end%>
