@@ -1,49 +1,30 @@
 class EditorsController < ApplicationController
 
-  def index()
+  def index
     @editors = Editor.all
   end
 
-#
-
-  def show()
+  def show
     @editor = Editor.find(params[:id])
   end
 
-#
-
-  def new()
+  def new
     @editor = Editor.new
   end
 
-#
-
-  def edit()
-    @editor = Editor.find(params[:id])
+  def create
+    @editor = Editor.new(editor_params)
+    if @editor.save
+      redirect_to editor_path(@editor)
+    else
+      render :new
+    end
   end
-
-#
-
-  def create()
-    Editor.create()
-  end
-
-#
-
-  def update()
-    Editor.update()
-  end
-
-#
-
-  def destroy()
-    Editor.find().destroy
-  end
-
+  
   private
 
-    def editor_params()
-      params.require(:editor).permit(:name, :date_created, :latest_version, :creator, :short_description)
-    end
+  def editor_params
+    params.require(:editor).permit(:name, :date_created, :latest_version, :creator, :short_description)
+  end
 
 end

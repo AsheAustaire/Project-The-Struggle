@@ -117,3 +117,272 @@ ActionView::Template::Error (undefined method `each' for nil:NilClass):
     3: <% end %>
   
 app/views/application/home.erb:1:in `_app_views_application_home_erb__420333253502280070_70196680548700'
+Started GET "/" for 127.0.0.1 at 2017-10-02 11:44:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering application/home.erb within layouts/application
+  Rendered application/home.erb within layouts/application (0.9ms)
+Completed 200 OK in 194ms (Views: 184.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/editors" for 127.0.0.1 at 2017-10-02 11:44:31 -0400
+Processing by EditorsController#index as HTML
+  Rendering editors/index.erb within layouts/application
+  Rendered editors/index.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/languages" for 127.0.0.1 at 2017-10-02 11:44:34 -0400
+Processing by LanguagesController#index as HTML
+  Rendering languages/index.erb within layouts/application
+  Rendered languages/index.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-02 11:45:03 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.erb within layouts/application
+  Rendered application/home.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-02 11:46:35 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.erb within layouts/application
+  Rendered application/home.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/editors" for 127.0.0.1 at 2017-10-02 11:46:37 -0400
+Processing by EditorsController#index as HTML
+  Rendering editors/index.erb within layouts/application
+  [1m[36mEditor Load (0.2ms)[0m  [1m[34mSELECT "editors".* FROM "editors"[0m
+  Rendered editors/index.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "JavaScript"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 15:46:49.181704"], ["updated_at", "2017-10-02 15:46:49.181704"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Atom"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 15:46:49.198612"], ["updated_at", "2017-10-02 15:46:49.198612"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ruby"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 15:46:49.201888"], ["updated_at", "2017-10-02 15:46:49.201888"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Notepad"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 15:46:49.205232"], ["updated_at", "2017-10-02 15:46:49.205232"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Java"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 15:46:49.207930"], ["updated_at", "2017-10-02 15:46:49.207930"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "NetBeans"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 15:46:49.210003"], ["updated_at", "2017-10-02 15:46:49.210003"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "C#"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 15:46:49.212042"], ["updated_at", "2017-10-02 15:46:49.212042"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sublime"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 15:46:49.214376"], ["updated_at", "2017-10-02 15:46:49.214376"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/editors" for 127.0.0.1 at 2017-10-02 11:46:54 -0400
+Processing by EditorsController#index as HTML
+  Rendering editors/index.erb within layouts/application
+  [1m[36mEditor Load (0.2ms)[0m  [1m[34mSELECT "editors".* FROM "editors"[0m
+  Rendered editors/index.erb within layouts/application (13.3ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/editors" for 127.0.0.1 at 2017-10-02 11:47:08 -0400
+Processing by EditorsController#index as HTML
+  Rendering editors/index.erb within layouts/application
+  [1m[36mEditor Load (0.2ms)[0m  [1m[34mSELECT "editors".* FROM "editors"[0m
+  Rendered editors/index.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/editors" for 127.0.0.1 at 2017-10-02 11:47:44 -0400
+Processing by EditorsController#index as HTML
+  Rendering editors/index.erb within layouts/application
+  [1m[36mEditor Load (0.2ms)[0m  [1m[34mSELECT "editors".* FROM "editors"[0m
+  Rendered editors/index.erb within layouts/application (1.2ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/editors/4" for 127.0.0.1 at 2017-10-02 11:47:46 -0400
+Processing by EditorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEditor Load (0.2ms)[0m  [1m[34mSELECT  "editors".* FROM "editors" WHERE "editors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering editors/show.erb within layouts/application
+  Rendered editors/show.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/language" for 127.0.0.1 at 2017-10-02 11:49:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/language"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/languages" for 127.0.0.1 at 2017-10-02 11:49:24 -0400
+Processing by LanguagesController#index as HTML
+  Rendering languages/index.erb within layouts/application
+  Rendered languages/index.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Languages):
+    1: <% Languages.each do |language| %>
+    2: <%= link_to(language.name, language_path(language)) %>
+    3: <% end %>
+  
+app/views/languages/index.erb:1:in `_app_views_languages_index_erb___1540732346162898322_70312329353260'
+Started GET "/languages" for 127.0.0.1 at 2017-10-02 11:49:35 -0400
+Processing by LanguagesController#index as HTML
+  Rendering languages/index.erb within layouts/application
+  [1m[36mLanguage Load (0.2ms)[0m  [1m[34mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.erb within layouts/application (7.9ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/languages" for 127.0.0.1 at 2017-10-02 11:49:51 -0400
+Processing by LanguagesController#index as HTML
+  Rendering languages/index.erb within layouts/application
+  [1m[36mLanguage Load (0.2ms)[0m  [1m[34mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.erb within layouts/application (1.3ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/languages/1" for 127.0.0.1 at 2017-10-02 11:53:27 -0400
+Processing by LanguagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLanguage Load (0.2ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering languages/show.erb within layouts/application
+  Rendered languages/show.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/languages/2" for 127.0.0.1 at 2017-10-02 11:53:29 -0400
+Processing by LanguagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering languages/show.erb within layouts/application
+  Rendered languages/show.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/languages/3" for 127.0.0.1 at 2017-10-02 11:53:31 -0400
+Processing by LanguagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering languages/show.erb within layouts/application
+  Rendered languages/show.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/languages" for 127.0.0.1 at 2017-10-02 11:56:09 -0400
+Processing by LanguagesController#index as HTML
+  Rendering languages/index.erb within layouts/application
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.erb within layouts/application (8.7ms)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/editors" for 127.0.0.1 at 2017-10-02 11:56:19 -0400
+Processing by EditorsController#index as HTML
+  Rendering editors/index.erb within layouts/application
+  [1m[36mEditor Load (0.2ms)[0m  [1m[34mSELECT "editors".* FROM "editors"[0m
+  Rendered editors/index.erb within layouts/application (7.9ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/editors/4" for 127.0.0.1 at 2017-10-02 11:56:20 -0400
+Processing by EditorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEditor Load (0.2ms)[0m  [1m[34mSELECT  "editors".* FROM "editors" WHERE "editors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering editors/show.erb within layouts/application
+  Rendered editors/show.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/editors/4" for 127.0.0.1 at 2017-10-02 11:56:28 -0400
+Processing by EditorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEditor Load (0.1ms)[0m  [1m[34mSELECT  "editors".* FROM "editors" WHERE "editors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering editors/show.erb within layouts/application
+  Rendered editors/show.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-02 11:56:30 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.erb within layouts/application
+  Rendered application/home.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/languages" for 127.0.0.1 at 2017-10-02 11:57:56 -0400
+Processing by LanguagesController#index as HTML
+  Rendering languages/index.erb within layouts/application
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.erb within layouts/application (9.2ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/languages" for 127.0.0.1 at 2017-10-02 11:57:58 -0400
+Processing by LanguagesController#index as HTML
+  Rendering languages/index.erb within layouts/application
+  [1m[36mLanguage Load (0.2ms)[0m  [1m[34mSELECT "languages".* FROM "languages"[0m
+  Rendered languages/index.erb within layouts/application (1.5ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-02 11:57:59 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.erb within layouts/application
+  Rendered application/home.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-02 11:58:02 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.erb within layouts/application
+  Rendered application/home.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/editors" for 127.0.0.1 at 2017-10-02 11:58:04 -0400
+Processing by EditorsController#index as HTML
+  Rendering editors/index.erb within layouts/application
+  [1m[36mEditor Load (0.2ms)[0m  [1m[34mSELECT "editors".* FROM "editors"[0m
+  Rendered editors/index.erb within layouts/application (9.4ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 0.9ms)
+
+

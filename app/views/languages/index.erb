@@ -1,0 +1,5 @@
+<%= link_to('Home', home_path) %>
+
+<% @languages.each do |language| %>
+<%= link_to(language.name, language_path(language)) %> <br />
+<% end %>

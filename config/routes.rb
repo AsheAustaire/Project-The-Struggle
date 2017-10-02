@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root('application#home')
+
+  root('application#home', {as: 'home'})
   resources(:languages)
   resources(:editors)
 

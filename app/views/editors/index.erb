@@ -1,0 +1,5 @@
+<%= link_to('Home', home_path) %>
+
+<% @editors.each do |editor| %>
+<%=   link_to(editor.name, editor_path(editor)) %> <br />
+<% end %>
