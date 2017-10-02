@@ -18,5 +18,7 @@ Company.create({name: 'Google' , culture: 10, workload: 10, compensation: 10 })
 Company.create({name: 'Facebook' , culture: 10, workload: 10, compensation: 10 })
 
 CompaniesLanguage.create({company_id: 1, language_id: 1})
+CompaniesLanguage.create({company_id: 1, language_id: 3})
 
 CompaniesLanguage.create({company_id: 2, language_id: 2})
+CompaniesLanguage.create({company_id: 2, language_id: 4})
