@@ -4,4 +4,12 @@ class ApplicationController < ActionController::Base
   def home
   end
 
+  def recommended
+    @params = params
+    @company = Company.find_by({name: params[:company]})
+    @user = User.all.last
+    @user.company = @company
+    @user.save
+  end
+
 end

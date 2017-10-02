@@ -752,3 +752,332 @@ Processing by LanguagesController#show as HTML
 Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.2ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "culture" integer, "workload" integer, "compensation" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies_languages"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "companies_languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_id" integer, "language_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "editors"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "editors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date_created" varchar, "latest_version" varchar, "creator" varchar, "short_description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "languages"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date_created" varchar, "latest_version" varchar, "creator" varchar, "short_description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171002183037)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171002135924),
+(20171002140030),
+(20171002181617);
+
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-02 20:43:21.295967"], ["updated_at", "2017-10-02 20:43:21.295967"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "culture" integer, "workload" integer, "compensation" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies_languages"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "companies_languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_id" integer, "language_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "editors"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "editors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date_created" varchar, "latest_version" varchar, "creator" varchar, "short_description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "languages"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date_created" varchar, "latest_version" varchar, "creator" varchar, "short_description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171002183037)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171002135924),
+(20171002140030),
+(20171002181617);
+
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-02 20:43:21.317918"], ["updated_at", "2017-10-02 20:43:21.317918"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "JavaScript"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:21.344990"], ["updated_at", "2017-10-02 20:43:21.344990"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Atom"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:21.363178"], ["updated_at", "2017-10-02 20:43:21.363178"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ruby"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:21.366282"], ["updated_at", "2017-10-02 20:43:21.366282"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Notepad"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:21.375169"], ["updated_at", "2017-10-02 20:43:21.375169"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Java"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:21.380710"], ["updated_at", "2017-10-02 20:43:21.380710"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "NetBeans"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:21.383547"], ["updated_at", "2017-10-02 20:43:21.383547"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "C#"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:21.387012"], ["updated_at", "2017-10-02 20:43:21.387012"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sublime"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:21.390328"], ["updated_at", "2017-10-02 20:43:21.390328"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "culture", "workload", "compensation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["culture", 10], ["workload", 10], ["compensation", 10], ["created_at", "2017-10-02 20:43:21.413613"], ["updated_at", "2017-10-02 20:43:21.413613"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "culture", "workload", "compensation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Facebook"], ["culture", 10], ["workload", 10], ["compensation", 10], ["created_at", "2017-10-02 20:43:21.416025"], ["updated_at", "2017-10-02 20:43:21.416025"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["language_id", 1], ["created_at", "2017-10-02 20:43:21.437417"], ["updated_at", "2017-10-02 20:43:21.437417"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["language_id", 3], ["created_at", "2017-10-02 20:43:21.441198"], ["updated_at", "2017-10-02 20:43:21.441198"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 2], ["language_id", 2], ["created_at", "2017-10-02 20:43:21.445029"], ["updated_at", "2017-10-02 20:43:21.445029"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "JavaScript"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:26.106243"], ["updated_at", "2017-10-02 20:43:26.106243"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Atom"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:26.121965"], ["updated_at", "2017-10-02 20:43:26.121965"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ruby"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:26.124187"], ["updated_at", "2017-10-02 20:43:26.124187"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Notepad"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:26.126397"], ["updated_at", "2017-10-02 20:43:26.126397"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Java"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:26.128587"], ["updated_at", "2017-10-02 20:43:26.128587"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "NetBeans"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:26.130770"], ["updated_at", "2017-10-02 20:43:26.130770"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "C#"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:26.132909"], ["updated_at", "2017-10-02 20:43:26.132909"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sublime"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 20:43:26.135016"], ["updated_at", "2017-10-02 20:43:26.135016"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "culture", "workload", "compensation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["culture", 10], ["workload", 10], ["compensation", 10], ["created_at", "2017-10-02 20:43:26.145254"], ["updated_at", "2017-10-02 20:43:26.145254"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "culture", "workload", "compensation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Facebook"], ["culture", 10], ["workload", 10], ["compensation", 10], ["created_at", "2017-10-02 20:43:26.147446"], ["updated_at", "2017-10-02 20:43:26.147446"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["language_id", 1], ["created_at", "2017-10-02 20:43:26.169537"], ["updated_at", "2017-10-02 20:43:26.169537"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["language_id", 3], ["created_at", "2017-10-02 20:43:26.173318"], ["updated_at", "2017-10-02 20:43:26.173318"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 2], ["language_id", 2], ["created_at", "2017-10-02 20:43:26.177074"], ["updated_at", "2017-10-02 20:43:26.177074"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "culture" integer, "workload" integer, "compensation" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies_languages"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "companies_languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_id" integer, "language_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "editors"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "editors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date_created" varchar, "latest_version" varchar, "creator" varchar, "short_description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "languages"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date_created" varchar, "latest_version" varchar, "creator" varchar, "short_description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171002183037)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171002135924),
+(20171002140030),
+(20171002181617);
+
+[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-02 21:12:15.805859"], ["updated_at", "2017-10-02 21:12:15.805859"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "culture" integer, "workload" integer, "compensation" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "companies_languages"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "companies_languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_id" integer, "language_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "editors"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "editors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date_created" varchar, "latest_version" varchar, "creator" varchar, "short_description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "languages"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date_created" varchar, "latest_version" varchar, "creator" varchar, "short_description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171002183037)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171002135924),
+(20171002140030),
+(20171002181617);
+
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-02 21:12:15.827647"], ["updated_at", "2017-10-02 21:12:15.827647"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "JavaScript"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:15.860855"], ["updated_at", "2017-10-02 21:12:15.860855"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Atom"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:15.878465"], ["updated_at", "2017-10-02 21:12:15.878465"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ruby"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:15.881112"], ["updated_at", "2017-10-02 21:12:15.881112"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Notepad"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:15.883297"], ["updated_at", "2017-10-02 21:12:15.883297"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Java"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:15.885252"], ["updated_at", "2017-10-02 21:12:15.885252"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "NetBeans"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:15.887396"], ["updated_at", "2017-10-02 21:12:15.887396"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "C#"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:15.890119"], ["updated_at", "2017-10-02 21:12:15.890119"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sublime"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:15.892175"], ["updated_at", "2017-10-02 21:12:15.892175"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "culture", "workload", "compensation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["culture", 10], ["workload", 10], ["compensation", 10], ["created_at", "2017-10-02 21:12:15.902462"], ["updated_at", "2017-10-02 21:12:15.902462"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "culture", "workload", "compensation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Facebook"], ["culture", 10], ["workload", 10], ["compensation", 10], ["created_at", "2017-10-02 21:12:15.905452"], ["updated_at", "2017-10-02 21:12:15.905452"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["language_id", 1], ["created_at", "2017-10-02 21:12:15.925278"], ["updated_at", "2017-10-02 21:12:15.925278"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["language_id", 3], ["created_at", "2017-10-02 21:12:15.928922"], ["updated_at", "2017-10-02 21:12:15.928922"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 2], ["language_id", 2], ["created_at", "2017-10-02 21:12:15.932363"], ["updated_at", "2017-10-02 21:12:15.932363"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 2], ["language_id", 4], ["created_at", "2017-10-02 21:12:15.936024"], ["updated_at", "2017-10-02 21:12:15.936024"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "JavaScript"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:31.860888"], ["updated_at", "2017-10-02 21:12:31.860888"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Atom"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:31.876013"], ["updated_at", "2017-10-02 21:12:31.876013"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ruby"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:31.878151"], ["updated_at", "2017-10-02 21:12:31.878151"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Notepad"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:31.880145"], ["updated_at", "2017-10-02 21:12:31.880145"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Java"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:31.882239"], ["updated_at", "2017-10-02 21:12:31.882239"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "NetBeans"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:31.884289"], ["updated_at", "2017-10-02 21:12:31.884289"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "languages" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "C#"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:31.886390"], ["updated_at", "2017-10-02 21:12:31.886390"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "editors" ("name", "date_created", "latest_version", "creator", "short_description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sublime"], ["date_created", "1995"], ["latest_version", "ECMAScript 2017"], ["creator", "Brendan Eich"], ["short_description", "JavaScript is used to add dynamic behavior, store information, and handle requests and responses on a website."], ["created_at", "2017-10-02 21:12:31.888805"], ["updated_at", "2017-10-02 21:12:31.888805"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "culture", "workload", "compensation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Google"], ["culture", 10], ["workload", 10], ["compensation", 10], ["created_at", "2017-10-02 21:12:31.901021"], ["updated_at", "2017-10-02 21:12:31.901021"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "culture", "workload", "compensation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Facebook"], ["culture", 10], ["workload", 10], ["compensation", 10], ["created_at", "2017-10-02 21:12:31.903335"], ["updated_at", "2017-10-02 21:12:31.903335"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["language_id", 1], ["created_at", "2017-10-02 21:12:31.924729"], ["updated_at", "2017-10-02 21:12:31.924729"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["language_id", 3], ["created_at", "2017-10-02 21:12:31.928380"], ["updated_at", "2017-10-02 21:12:31.928380"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 2], ["language_id", 2], ["created_at", "2017-10-02 21:12:31.931799"], ["updated_at", "2017-10-02 21:12:31.931799"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT  "languages".* FROM "languages" WHERE "languages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies_languages" ("company_id", "language_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company_id", 2], ["language_id", 4], ["created_at", "2017-10-02 21:12:31.935219"], ["updated_at", "2017-10-02 21:12:31.935219"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20171002212916)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "user_name" varchar, "company" varchar, "dev_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171002212916"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
