@@ -6,4 +6,4 @@
 <h4>Company: <%=@user.company%></h4>
 
 
-<%=link_to "Log-Out", session[@user.id], method: :delete, data:{confirm: "Are you sure?"}%><br><br>
+<%= link_to "Log Out", logout_path, method: :delete %>
