@@ -1,4 +1,4 @@
-<%= link_to('Home', home_path) %>
+<%= link_to('Home', home_path) %><br>
 
 <label>Name: </label>
 <%=@language.name%><br>
@@ -14,3 +14,11 @@
 
 <label>Short Description: </label>
 <%=@language.short_description%><br>
+
+
+
+<h2>Text Editors and IDE's</h2>
+
+<%@language.editors.each do |editor|%>
+  <%=link_to editor.name, editor_path(editor)%><br>
+<%end%>

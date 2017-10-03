@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002212916) do
+ActiveRecord::Schema.define(version: 20171003210134) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.integer "culture"
-    t.integer "workload"
+    t.integer "worklife"
     t.integer "compensation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 20171002212916) do
     t.string "latest_version"
     t.string "creator"
     t.string "short_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "dev_type"
+  end
+
+  create_table "languages_editors", force: :cascade do |t|
+    t.integer "language_id"
+    t.integer "editor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
