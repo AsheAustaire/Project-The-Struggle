@@ -1,12 +1,24 @@
-<h1> Welcome to 'The Struggle' </h1>
+<%= link_to('Sign Up', new_user_path) unless session[:user_id] %> <br>
+<%= link_to('Sign In', login_path) unless session[:user_id]%> <br>
+<%= link_to('Sign Out', logout_path, {method: :delete}) if session[:user_id] %> <br>
+<%= image_tag 'banner.jpg' %>
 
-<%= link_to('View All Editors', editors_path) %> <br>
-<%= link_to('View All Languages', languages_path) %>
+<p>
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+<div style="text-align:center"><h1> Welcome to 'The Struggle' </h1></div>
 
 
-<h2>Select a Company you would like to work for:</h2>
+
+<h1>LANGUAGES</h1>
+<% Language.all.each do |language| %>
+  <%= link_to(language.name, language_path(language.id)) %>
+<% end %>
+
+<!-- <h2>Select a Company you would like to work for:</h2>
 
 
 <%=link_to "Google", recommended_path({company: 'Google'})%>
 
-<%=link_to "Facebook", recommended_path({company: 'Facebook'})%>
+<%=link_to "Facebook", recommended_path({company: 'Facebook'})%> -->

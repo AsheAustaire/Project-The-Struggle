@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
 
     user = user.try(:authenticate, params[:user][:password])
 
-    byebug
 
     return redirect_to(controller: 'sessions', action: 'new') unless user
 

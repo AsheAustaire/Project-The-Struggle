@@ -1,9 +1,21 @@
-<h1>Hello <%=@user.name%></h1>
-
-<h4>Username: <%=@user.user_name%></h4>
-
-
-<h4>Company: <%=@user.company%></h4>
-
+<%= link_to "Home", home_path %>
 
 <%= link_to "Log Out", logout_path, method: :delete %>
+
+
+<h4>Name: <%=@user.name%></h4>
+<h4>Username: <%=@user.user_name%></h4>
+<h4>Company: <%=@user.company%></h4>
+<h4>Dev Type: <%=@user.dev_type%></h4>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices diam at tortor posuere, non condimentum ex pretium. Nunc
+</p>
+
+<%= link_to "Job", workstyle_path %>
+<%= link_to "Personality", playstyle_path %>
+
+<h1> RECOMMENDED LANGUAGES</h1>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices diam at tortor posuere, non condimentum ex pretium. Nunc

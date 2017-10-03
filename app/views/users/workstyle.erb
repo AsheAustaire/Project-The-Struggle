@@ -1,0 +1,10 @@
+<%= form_for @user do |f| %>
+  <%= f.label :company, "Which Company Would You Like To Work For?" %>:
+  <%= f.text_field :company, list: 'company-name' %>
+  <datalist id="company-name">
+    <% Company.all.each do |company| %>
+      <option value="<%= company.name %>"></option>
+    <% end %>
+  </datalist>
+  <%= f.submit %>
+<% end %>

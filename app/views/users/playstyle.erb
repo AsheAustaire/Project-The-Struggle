@@ -1,0 +1,6 @@
+<%=form_for @user do |f|%>
+  <%=f.label :dev_type, "What type of developer are you?"%>
+  <%=f.select :dev_type, ['Front-End', 'Back-End', 'Full Stack'] %>
+
+  <%=f.submit%>
+<%end%>

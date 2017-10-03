@@ -19,10 +19,27 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def workstyle
+    @user = current_user
+  end
+
+  def playstyle
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to(user_path(@user))
+    else
+      render(:workstyle)
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :user_name, :company, :dev_type, :password, :password_confirmation)
+    params.require(:user).permit(:name, :user_name, :company, :password, :dev_type, :password_confirmation)
   end
 
 end
