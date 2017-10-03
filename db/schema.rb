@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20171002212916) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "user_name"
+    t.string "password_digest"
     t.string "company"
     t.string "dev_type"
     t.datetime "created_at", null: false
