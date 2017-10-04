@@ -1,10 +1,7 @@
-
-
-
 body {
     margin: 0 0 30px; /* bottom has to be the same as footer height */
     padding-bottom:120px;
-    
+
 
 }
 footer {
@@ -20,4 +17,8 @@ footer {
     bottom: 0;
     height: 30px;
     width: 100%;
+}
+
+.img-circle {
+    border-radius: 50%;
 }

@@ -1,24 +1,50 @@
-<%= link_to "Home", home_path %>
+<div style='padding-top:50px'>
 
-<%= link_to "Log Out", logout_path, method: :delete %>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div style='text-align:center; border-radius: 50%;'>
+        <img class='img-circle' src='https://media.giphy.com/media/eCqFYAVjjDksg/giphy.gif' />
+        <h4>Username: <%=@user.user_name%></h4>
+      </div>
 
 
-<h4>Name: <%=@user.name%></h4>
-<h4>Username: <%=@user.user_name%></h4>
-<h4>Company: <%=@user.company%></h4>
-<h4>Dev Type: <%=@user.dev_type%></h4>
+      <div style='margin-top:100px; margin-left:100px;'>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices diam at tortor posuere, non condimentum ex pretium. Nunc
-</p>
+      <h4>Name: <%=@user.name%></h4>
+      <h4>Company: <%=@user.company%></h4>
+      <h4>Dev Type: <%=@user.dev_type%></h4>
+      </div>
+    </div>
+  </div>
 
-<%= link_to "Job", workstyle_path %>
-<%= link_to "Personality", playstyle_path %>
 
-<h1> RECOMMENDED LANGUAGES</h1>
 
-<%@languages.each do |language|%>
-  <%if language.dev_type == @user.dev_type%>
-    <%=link_to(language.name, language_path(language.id))%>
-  <%end%>
-<%end%>
+<h3 style='margin:100px; text-align:center'>
+Hey Friend, click below to fill out some information about yourself!!!
+</h3>
+
+
+
+<a class="btn btn-success btn-lg btn-block"  href='/workstyle'>WORKSTYLE</a>
+<a class="btn btn-danger btn-lg btn-block" href='/playstyle'>PLAYSTYLE</a>
+
+
+
+<h3 style='margin:100px; text-align:center'>
+RECOMMENDED LANGUAGES
+</h3>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div style='text-align:center'>
+    <%@languages.each do |language|%>
+      <%if language.dev_type == @user.dev_type%>
+      <h1>  <%=link_to(language.name, language_path(language.id))%> </h1>
+      <%end%>
+    <%end%>
+    </div>
+  </div>
+
+
+
+</div>

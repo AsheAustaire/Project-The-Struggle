@@ -1,15 +1,22 @@
+<div>
 <div style="text-align:center">
-
 <h1>Login</h1>
 
-<%= form_for @user, url: login_path, method: :post do |f| %>
-  <%= f.label :user_name %>
-  <%= f.text_field :user_name %>
-<br />
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-<br />
-  <%= f.submit "log in" %>
-  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
-<% end %>
+  <%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
+    <div class="form-group float-center">
+      <%= f.label :user_name, "Username", class: "col-md-4 control-label" %>
+          <div class="col-md-3" style='content-align:center;'>
+            <%= f.text_field :user_name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, "Password:", class: "col-md-4 control-label" %>
+          <div class="col-md-3">
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
+        </div>
+        <%= f.submit "Login", class: "btn btn-default btn-primary" %>
+   <% end %>
+
+
 </div>

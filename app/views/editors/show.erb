@@ -1,16 +1,21 @@
-<%= link_to('Home', home_path) %><br>
+<div style='padding-top:50px'>
 
-<label>Name: </label>
-<%=@editor.name%><br>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div style='text-align:center; border-radius: 50%;'>
+        <img class='img-circle' src='https://media.giphy.com/media/3BFow8LKwnGBq/giphy.gif' />
+        <h4><%=@editor.name%></h4>
+      </div>
 
-<label>Date Created: </label>
-<%=@editor.date_created%><br>
 
-<label>Latest Version: </label>
-<%=@editor.latest_version%><br>
+      <div style='margin-top:100px; margin-left:100px;'>
 
-<label>Creator: </label>
-<%=@editor.creator%><br>
+      <h4>Name: <%=@editor.date_created%></h4>
+      <h4>Company: <%=@editor.latest_version%></h4>
+      <h4>Dev Type: <%=@editor.creator%></h4>
+      <h4>Dev Type: <%=@editor.short_description%></h4>
+      </div>
+    </div>
+  </div>
 
-<label>Short Description: </label>
-<%=@editor.short_description%><br>
+</div>
