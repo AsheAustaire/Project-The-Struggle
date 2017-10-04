@@ -17,5 +17,8 @@
 
 <h1> RECOMMENDED LANGUAGES</h1>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices diam at tortor posuere, non condimentum ex pretium. Nunc
+<%@languages.each do |language|%>
+  <%if language.dev_type == @user.dev_type%>
+    <%=link_to(language.name, language_path(language.id))%>
+  <%end%>
+<%end%>
