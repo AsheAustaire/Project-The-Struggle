@@ -16,8 +16,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-  end
+      @user = User.find(params[:id])
+      @languages = []
+      Language.all.each do |l|
+        l.companies.each do |c|
+          if @user.company == c.name
+            @languages << l
+          end
+        end
+      end
+    end
 
   def workstyle
     @user = current_user

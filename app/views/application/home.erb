@@ -1,31 +1,33 @@
 <div style="text-align:center">
 
-
-<%= link_to('Sign Up', new_user_path) unless session[:user_id] %>
-<%= link_to('Sign In', login_path) unless session[:user_id]%>
 <%= link_to('My Profile', user_path(session[:user_id])) if session[:user_id] %>
-<%= link_to('Sign Out', logout_path, {method: :delete}) if session[:user_id] %>
+
 
 <h1>Welcome to 'The Struggle'</h1>
 
 
 
-<p>
-  What came first, the program or the language . . . Everyday more people begin their journey as software developers, web-designers, data-scientists, IT professionals, the list can go on. What do all of these professions have in common? They require you to dive or dabble in source code. It is reasonable then, to see why learning a programming language is an important part of working in the twenty first century.
-</p>
+  <p>
+    What came first, the program or the language . . . Everyday more people begin their journey as software developers, web-designers, data-scientists, IT professionals, the list can go on. What do all of these professions have in common? They require you to dive or dabble in source code. It is reasonable then, to see why learning a programming language is an important part of working in the twenty first century.
+  </p>
 
 
 
 
-<h1>LANGUAGES</h1>
+  <h1>LANGUAGES</h1>
 
+<br />
 
-  <% Language.all.each do |language| %>
-    <h1><%= link_to(language.name, language_path(language.id)) %></h1>
-  <% end %>
+  <!-- Language List -->
+  <div class="container">
+    <div class="row">
+      <% Language.all.each do |language| %>
 
+        <div class="col"><h1><%= link_to(image_tag('ruby.png', size: '100x100') , language_path(language.id)) %></h1></div>
+        <div class="col"><h1><%= link_to(language.name, language_path(language.id)) %></h1></div>
 
-
-
+      <% end %>
+    <div class="w-100"></div>
+  </div>
 
 </div>
