@@ -12,37 +12,46 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li> -->
-    </ul>
-    <%if session[:user_id]%>
-        <a class="nav-link disabled" href="/logout">Logout</a>
-    <%else%>
-        <a class="nav-link disabled" href="/login">Login</a>
-        <a class="nav-link disabled" href="/users/new">Signup</a>
-    <%end%>
-    </div>
-    </nav>
-  </header>
 
 
   <body>
 
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top" style='position:fixed; width:100%;'>
+    <a class="navbar-brand" href="/">TheStruggle</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <%if session[:user_id]%>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%=user_path(session[:user_id])%>">My Profile<span class="sr-only">(current)</span></a>
+        </li>
+        <% end %>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+      </ul>
+      <%if session[:user_id]%>
+          <a class="nav-link disabled" href="/logout">Logout</a>
+      <%else%>
+          <a class="nav-link disabled" href="/login">Login</a>
+          <a class="btn btn-dark" href="/users/new">Signup</a>
+      <%end%>
+      </div>
+      </nav>
+    </header>
+
     <!--  -->
-    <%= yield %>
+    <div style="padding-top:50px">
+      <%= yield %>
+    </div>
     <!--  -->
 
 
@@ -55,11 +64,8 @@
   </body>
 
   <footer>
+        Mad With Love by: @AsheAustaire @AlArtesona :)
   </footer>
 
-</html>
 
-<!-- <form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form> -->
+</html>
