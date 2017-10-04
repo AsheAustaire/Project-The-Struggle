@@ -1,25 +1,29 @@
+
+
 <%= link_to('Sign Up', new_user_path) unless session[:user_id] %> <br>
 <%= link_to('Sign In', login_path) unless session[:user_id]%> <br>
 <%= link_to('My Profile', user_path(session[:user_id])) if session[:user_id] %> <br>
 <%= link_to('Sign Out', logout_path, {method: :delete}) if session[:user_id] %> <br>
 
-
-
-
-<%= image_tag 'banner.jpg' %>
-
+<div class="container-fluid">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</div>
 <p>
-  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
 </p>
 
-<div style="text-align:center"><h1> Welcome to 'The Struggle' </h1></div>
+<div style="text-align:center"><h1 class="display-1">Welcome to 'The Struggle'</h1></div>
 
 
 
-<h1>LANGUAGES</h1>
-<% Language.all.each do |language| %>
-  <%= link_to(language.name, language_path(language.id)) %><br>
-<% end %>
+<div style="text-align:center"><h1>LANGUAGES</h1></div>
+
+<div class="row">
+  <% Language.all.each do |language| %>
+  <div class="col">  <%= link_to(language.name, language_path(language.id)) %><br></div>
+    <% end %>
+</div>
+
 
 <!-- <h2>Select a Company you would like to work for:</h2>
 
