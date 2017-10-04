@@ -1,5 +1,10 @@
+
+<div style='text-align:center; margin-top:150px'>
+
+
+
 <%= form_for @user do |f| %>
-  <%= f.label :company, "Which Company Would You Like To Work For?" %>:
+  <h1><%= f.label :company, "Which Company Would You Like To Work For?" %> </h1>
   <%= f.text_field :company, list: 'company-name' %>
   <datalist id="company-name">
     <% Company.all.each do |company| %>
@@ -8,3 +13,5 @@
   </datalist>
   <%= f.submit %>
 <% end %>
+
+</div>
