@@ -1,33 +1,31 @@
+<div style="text-align:center">
 
 
-<%= link_to('Sign Up', new_user_path) unless session[:user_id] %> <br>
-<%= link_to('Sign In', login_path) unless session[:user_id]%> <br>
-<%= link_to('My Profile', user_path(session[:user_id])) if session[:user_id] %> <br>
-<%= link_to('Sign Out', logout_path, {method: :delete}) if session[:user_id] %> <br>
+<%= link_to('Sign Up', new_user_path) unless session[:user_id] %>
+<%= link_to('Sign In', login_path) unless session[:user_id]%>
+<%= link_to('My Profile', user_path(session[:user_id])) if session[:user_id] %>
+<%= link_to('Sign Out', logout_path, {method: :delete}) if session[:user_id] %>
 
-<div class="container-fluid">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-</div>
+<h1>Welcome to 'The Struggle'</h1>
+
+
+
 <p>
-
+  What came first, the program or the language . . . Everyday more people begin their journey as software developers, web-designers, data-scientists, IT professionals, the list can go on. What do all of these professions have in common? They require you to dive or dabble in source code. It is reasonable then, to see why learning a programming language is an important part of working in the twenty first century.
 </p>
 
-<div style="text-align:center"><h1 class="display-1">Welcome to 'The Struggle'</h1></div>
 
 
 
-<div style="text-align:center"><h1>LANGUAGES</h1></div>
+<h1>LANGUAGES</h1>
 
-<div class="row">
+
   <% Language.all.each do |language| %>
-  <div class="col">  <%= link_to(language.name, language_path(language.id)) %><br></div>
-    <% end %>
+    <h1><%= link_to(language.name, language_path(language.id)) %></h1>
+  <% end %>
+
+
+
+
+
 </div>
-
-
-<!-- <h2>Select a Company you would like to work for:</h2>
-
-
-<%=link_to "Google", recommended_path({company: 'Google'})%>
-
-<%=link_to "Facebook", recommended_path({company: 'Facebook'})%> -->
