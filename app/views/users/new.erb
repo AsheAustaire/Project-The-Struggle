@@ -1,4 +1,6 @@
-<h1>Create a New User</h1>
+<div style="text-align:center">
+
+<h1>Create a User</h1>
 
 <%=form_for(@user) do |f|%>
   <%=f.label :name%>
@@ -14,4 +16,5 @@
   <%= f.password_field :password_confirmation %><br><br>
 
   <%=f.submit%>
+</div>
 <%end%>
