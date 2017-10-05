@@ -52,6 +52,6 @@ LanguagesEditor.create({language_id: 4, editor_id: 4})
 LanguagesEditor.create({language_id: 4, editor_id: 1})
 LanguagesEditor.create({language_id: 4, editor_id: 2})
 
-User.create(name: 'Al', user_name: 'aaa', password: 'aaa', password_confirmation: 'aaa', company: "Google", dev_type: 'Back-End')
+User.create(name: 'Al', user_name: 'aaa', password: 'aaa', password_confirmation: 'aaa', company: "Google", dev_type: 'Back-End', personality_score: 0)
 
-User.create(name: 'Ashe', user_name: 'TheAshes', password: 'aaa', password_confirmation: 'aaa', company: "Facebook", dev_type: 'Full Stack')
+User.create(name: 'Ashe', user_name: 'TheAshes', password: 'aaa', password_confirmation: 'aaa', company: "Facebook", dev_type: 'Full Stack', personality_score: 0)

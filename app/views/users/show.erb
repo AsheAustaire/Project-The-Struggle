@@ -27,6 +27,7 @@ Hey Friend, click below to fill out some information about yourself!!!
 
 <a class="btn btn-success btn-lg btn-block"  href='/workstyle'>WORKSTYLE</a>
 <a class="btn btn-danger btn-lg btn-block" href='/playstyle'>PLAYSTYLE</a>
+<a class="btn btn-info btn-lg btn-block" href='/personality'>PERSONALITY</a>
 
 
 
@@ -45,6 +46,19 @@ RECOMMENDED LANGUAGES
     </div>
   </div>
 
+
+<h3 style='margin:100px; text-align:center'>
+RECOMMENDED COMPANIES
+</h3>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div style='text-align:center'>
+    <%@companies.each do |company|%>
+      <h1>  <%=company%> </h1>
+    <%end%>
+    </div>
+  </div>
 
 
 </div>
