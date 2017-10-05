@@ -2,7 +2,7 @@
 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-3">The Struggle Is Real</h1>
+      <h1 class="display-3" style ='font-family:NTR ;'>THE STRUGGLE IS REAL</h1>
       <p class="lead">Sometimes, we need a little help . . .</p>
     </div>
   </div>
@@ -16,7 +16,7 @@
 
 
 
-  <div style='margin:0 0 100'>
+  <div style='margin:0 0 100;font-family:yantramanav;'>
     <h1>LANGUAGES</h1>
   </div>
 
@@ -25,15 +25,12 @@
 
   <!-- Language List -->
   <div class="container">
-    <div class="row">
+    <div class="row" style='background-color:#E4E7EB; border-style:solid; border-color:#A9A9A9'>
       <% Language.all.each_with_index do |language, i| %>
-
-      <div class="col-3" style='border-style:solid'>
-        <div ><%= link_to(image_tag('ruby.png', size: '100x100') , language_path(language.id)) %></div>
+      <div class="col-6" style='padding:50px;'>
+        <div ><%= link_to(image_tag("#{language.name.downcase}100.png", size: '75x75') , language_path(language.id)) %></div>
         <div ><h3><%= link_to(language.name, language_path(language.id)) %></h3></div>
         <div ><h6><%=language.short_description%></h6>
-        <%= i %>
-
         </div>
       </div>
       <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005020559) do
+ActiveRecord::Schema.define(version: 20171005171456) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20171005020559) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "dev_type"
+    t.string "img"
   end
 
   create_table "languages_editors", force: :cascade do |t|
@@ -64,7 +65,7 @@ ActiveRecord::Schema.define(version: 20171005020559) do
     t.string "dev_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "personality_score"
+    t.integer "personality_score", default: 0
     t.string "response_one"
     t.string "response_two"
     t.string "response_three"
