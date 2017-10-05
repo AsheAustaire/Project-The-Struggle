@@ -1,0 +1,26 @@
+
+
+body {
+    margin: 0 0 30px; /* bottom has to be the same as footer height */
+    padding-bottom:120px;
+
+
+}
+footer {
+    /* just for demo */
+    background-color: #F8F8F8;
+    border-top: 1px solid #E7E7E7;
+    text-align:center;
+    padding:0px;
+   /* just for demo */
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+}
+
+.img-circle {
+    border-radius: 50%;
+}

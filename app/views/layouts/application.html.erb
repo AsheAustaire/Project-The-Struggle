@@ -4,45 +4,56 @@
     <title>TheStruggle</title>
     <!-- Rails Config -->
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!-- Bootstrap Config -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
   </head>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li> -->
-    </ul>
-    <%if session[:user_id]%>
-        <a class="nav-link disabled" href="/logout">Logout</a>
-    <%else%>
-        <a class="nav-link disabled" href="/login">Login</a>
-        <a class="nav-link disabled" href="/users/new">Signup</a>
-    <%end%>
-    </div>
-    </nav>
-  </header>
 
 
   <body>
 
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top" style='position:fixed; width:100%;'>
+    <a class="navbar-brand" style='padding-top:10px' href="/"> <%=image_tag('logomini.png', size: '105x23') %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <%if session[:user_id]%>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%=user_path(session[:user_id])%>">My Profile<span class="sr-only">(current)</span></a>
+        </li>
+        <% end %>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+      </ul>
+      <%if session[:user_id]%>
+          <a class="nav-link disabled" href="/logout">Logout</a>
+      <%else%>
+          <a class="nav-link disabled" href="/login">Login</a>
+          <a class="btn btn-dark" href="/users/new">Signup</a>
+      <%end%>
+      </div>
+      </nav>
+    </header>
+
     <!--  -->
-    <%= yield %>
+    <div style="padding-top:50px">
+      <%= yield %>
+    </div>
     <!--  -->
 
 
@@ -52,14 +63,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+    <footer style='padding-top:8px; font-family:Montserrat;font-size:x-small;'>
+      Made With <i class="em em-collision"></i> : <a href='https://www.asheaustaire.com'>@AsheAustaire</a> <a href=''>@AlArtesona</a>.
+    </footer>
   </body>
 
-  <footer>
-  </footer>
-
 </html>
-
-<!-- <form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form> -->

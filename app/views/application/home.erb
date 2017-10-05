@@ -1,31 +1,41 @@
 <div style="text-align:center">
 
-<%= link_to('My Profile', user_path(session[:user_id])) if session[:user_id] %>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3">The Struggle Is Real</h1>
+      <p class="lead">Sometimes, we need a little help . . .</p>
+    </div>
+  </div>
 
 
-<h1>Welcome to 'The Struggle'</h1>
 
 
-
-  <p>
+  <p style='margin:100px'>
     What came first, the program or the language . . . Everyday more people begin their journey as software developers, web-designers, data-scientists, IT professionals, the list can go on. What do all of these professions have in common? They require you to dive or dabble in source code. It is reasonable then, to see why learning a programming language is an important part of working in the twenty first century.
   </p>
 
 
 
+  <div style='margin:0 0 100'>
+    <h1>LANGUAGES</h1>
+  </div>
 
-  <h1>LANGUAGES</h1>
 
 <br />
 
   <!-- Language List -->
   <div class="container">
     <div class="row">
-      <% Language.all.each do |language| %>
+      <% Language.all.each_with_index do |language, i| %>
 
-        <div class="col"><h1><%= link_to(image_tag('ruby.png', size: '100x100') , language_path(language.id)) %></h1></div>
-        <div class="col"><h1><%= link_to(language.name, language_path(language.id)) %></h1></div>
+      <div class="col-3" style='border-style:solid'>
+        <div ><%= link_to(image_tag('ruby.png', size: '100x100') , language_path(language.id)) %></div>
+        <div ><h3><%= link_to(language.name, language_path(language.id)) %></h3></div>
+        <div ><h6><%=language.short_description%></h6>
+        <%= i %>
 
+        </div>
+      </div>
       <% end %>
     <div class="w-100"></div>
   </div>
