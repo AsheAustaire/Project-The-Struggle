@@ -24,17 +24,17 @@ class UsersController < ApplicationController
       redirect_to home_path
     end
 
-    @user.response_one_personality
-
-    if @user.personality_score == 1
+    @user.complete_personality_score
+    
+    if @user.personality_score == 3 || @user.personality_score == 7 || @user.personality_score == 12
       Company.culture_companies.each do |company|
         @companies << company.name
       end
-    elsif @user.personality_score == 5
+    elsif @user.personality_score == 11 || @user.personality_score == 15 || @user.personality_score == 20
       Company.work_life_companies.each do |company|
         @companies << company.name
       end
-    elsif @user.personality_score == 10
+    elsif @user.personality_score == 21 || @user.personality_score == 25 || @user.personality_score == 30
       Company.compensation_companies.each do |company|
         @companies << company.name
       end

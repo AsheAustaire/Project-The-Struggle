@@ -1,21 +1,21 @@
 <div style='padding-top:50px'>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <div style='text-align:center; border-radius: 50%;'>
-        <img class='img-circle' src='https://media.giphy.com/media/3BFow8LKwnGBq/giphy.gif' />
-        <h4><%=@editor.name%></h4>
-      </div>
+      <div style='text-align:center; font-family:questrial;'>
+        <% if File.file?("app/assets/images/#{@editor.name.downcase}100.png")%>
+        <%= (image_tag("#{@editor.name.downcase}100.png")) %>
+        <% else %>
+        <%= (image_tag("default100.png")) %>
+        <% end %>
+        <h4 style ='font-size:100px;'><%=@editor.name%></h4>
 
 
-      <div style='margin-top:100px; margin-left:100px;'>
+      <div style='margin-top:100px; text-align:left;'>
 
-      <h4>Date Created: <%=@editor.date_created%></h4>
-      <h4>Latest Version: <%=@editor.latest_version%></h4>
-      <h4>Creator: <%=@editor.creator%></h4>
-      <h4>Description: <%=@editor.short_description%></h4>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Year Created:</h4>   <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@editor.date_created%></h6>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Latest Version:</h4> <h6 style ='font-size:15px; font-style:bold; padding-left:30px;'><%=@editor.latest_version%></h6>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Creator:</h4>        <h6 style ='font-size:15px; font-style:bold; padding-left:30px;'><%=@editor.creator%></h6>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Description:</h4>    <h6 style ='font-size:15px; font-style:bold; padding-left:30px;'><%=@editor.short_description%></h6>
       </div>
     </div>
   </div>
-
 </div>

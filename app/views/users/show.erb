@@ -1,26 +1,22 @@
 <div style='padding-top:50px'>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <div style='text-align:center; border-radius: 50%;'>
-        <img class='img-circle' src='https://media.giphy.com/media/eCqFYAVjjDksg/giphy.gif' />
-        <h4>Username: <%=@user.user_name%></h4>
+    <div style='text-align:center; font-family:questrial;'>
+        <img src='https://media.giphy.com/media/eCqFYAVjjDksg/giphy.gif' />
+        <h4 style='padding:20px 0 0 0 ; font-family:Yantramanav; font-weight:900'><%=@user.user_name%></h4>
       </div>
 
 
-      <div style='margin-top:100px; margin-left:100px;'>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Name:</h4>   <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.name%></h6>
 
-      <h4>Name: <%=@user.name%></h4>
-      <h4>Company: <%=@user.company%></h4>
-      <h4>Dev Type: <%=@user.dev_type%></h4>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Company Preference</h4>   <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.company%></h6>
+
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Developer Type</h4>   <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.dev_type%></h6>
       </div>
     </div>
   </div>
 
-
-
-<h3 style='margin:100px; text-align:center'>
-Hey Friend, click below to fill out some information about yourself!!!
+<h3 style='margin:80px; text-align:center'>
+These are important instructions!
 </h3>
 
 
@@ -45,6 +41,7 @@ RECOMMENDED LANGUAGES
     <%end%>
     </div>
   </div>
+</div>
 
 
 <h3 style='margin:100px; text-align:center'>
@@ -59,6 +56,8 @@ RECOMMENDED COMPANIES
     <%end%>
     </div>
   </div>
+
+
 
 
 </div>

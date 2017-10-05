@@ -1,34 +1,35 @@
 <div style='padding-top:50px'>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <div style='text-align:center; border-radius: 50%;'>
-        <img class='img-circle' src='https://media.giphy.com/media/T9PjEB2NXsoJa/giphy.gif' />
-        <h4><%=@language.name%></h4>
-      </div>
+      <div style='text-align:center; font-family:questrial;'>
+        <%= image_tag("#{@language.name.downcase}100.png") %>
+        <h4 style ='font-size:100px;'><%=@language.name%></h4>
 
 
-      <div style='margin-top:100px; margin-left:100px;'>
+      <div style='margin-top:100px; text-align:left;'>
 
-      <h4>Year Created: <%=@language.date_created%></h4>
-      <h4>Latest Version: <%=@language.latest_version%></h4>
-      <h4>Creator: <%=@language.creator%></h4>
-      <h4>Description: <%=@language.short_description%></h4>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Year Created:</h4>   <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@language.date_created%></h6>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Latest Version:</h4> <h6 style ='font-size:15px; font-style:bold; padding-left:30px;'><%=@language.latest_version%></h6>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Creator:</h4>        <h6 style ='font-size:15px; font-style:bold; padding-left:30px;'><%=@language.creator%></h6>
+      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Description:</h4>    <h6 style ='font-size:15px; font-style:bold; padding-left:30px;'><%=@language.short_description%></h6>
       </div>
     </div>
   </div>
 
-<h3 style='margin:100px; text-align:center'>
-RECOMMENDED IDE's
-</h3>
+<div style='margin: 100px 0 0 0 ;font-family:yantramanav;text-align:center;'>
+<h1 style='padding:0 0 100px 0px; font-weight:900;'>RECOMMENDED IDE's</h1>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <div style='text-align:center'>
+<div class="container">
+  <div class="row" style='background-color:#E4E7EB; border-style:solid; border-color:#A9A9A9'>
       <%@language.editors.each do |editor|%>
-        <%=link_to editor.name, editor_path(editor)%>
+      <div class="col-4" style='padding:50px; text-align:center'>
+        <% if File.file?("app/assets/images/#{editor.name.downcase}100.png")%>
+          <%=link_to(image_tag("#{editor.name.downcase}100.png"), editor_path(editor)) %>
+        <% else %>
+          <%=link_to(image_tag("default100.png"), editor_path(editor)) %>
+        <% end %>
+        <h3><%= link_to(editor.name, editor_path(editor))%></h3>
+      </div>
       <%end%>
-    </div>
-  </div>
 
+  </div>
 </div>

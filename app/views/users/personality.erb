@@ -4,6 +4,12 @@
   <h1><%=f.label :response_one, "What is most important to you when looking to work for a company?"%></h1>
   <%=f.select :response_one, ['Culture', 'Work-Life Balance', 'Compensation'] %>
 
+  <h1><%=f.label :response_two, "Who is your favorite superhero?"%></h1>
+  <%=f.select :response_two, ['Spiderman', 'Superman', 'Batman'] %><br><br>
+  
+  <h1><%=f.label :response_three, "If you were a box of cereal, what cereal would you be?"%></h1>
+  <%=f.select :response_three, ['Froot Loops', 'Frosted Flakes', 'Lucky Charms'] %><br><br>
+
   <%=f.submit%>
 <%end%>
 
