@@ -7,9 +7,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!-- Bootstrap Config -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
   </head>
 
 
@@ -19,7 +21,7 @@
 
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top" style='position:fixed; width:100%;'>
-    <a class="navbar-brand" href="/">TheStruggle</a>
+    <a class="navbar-brand" style='padding-top:10px' href="/"> <%=image_tag('logomini.png', size: '105x23') %></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -61,11 +63,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+    <footer style='padding-top:8px; font-family:Montserrat;font-size:x-small;'>
+      Made With <i class="em em-collision"></i> : <a href='https://www.asheaustaire.com'>@AsheAustaire</a> <a href=''>@AlArtesona</a>.
+    </footer>
   </body>
-
-  <footer>
-        Mad With Love by: @AsheAustaire @AlArtesona :)
-  </footer>
-
 
 </html>
