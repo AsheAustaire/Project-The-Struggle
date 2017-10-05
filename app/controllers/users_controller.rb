@@ -16,22 +16,52 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
-      @languages = []
-      Language.all.each do |l|
-        l.companies.each do |c|
-          if @user.company == c.name
-            @languages << l
-          end
+    @user = User.find(params[:id])
+    @languages = []
+    @companies = []
+
+    if session[:user_id] != @user.id
+      redirect_to home_path
+    end
+
+    @user.response_one_personality
+
+    if @user.personality_score == 1
+      Company.culture_companies.each do |company|
+        @companies << company.name
+      end
+    elsif @user.personality_score == 5
+      Company.work_life_companies.each do |company|
+        @companies << company.name
+      end
+    elsif @user.personality_score == 10
+      Company.compensation_companies.each do |company|
+        @companies << company.name
+      end
+    else
+      @companies << Company.all.sample.name
+    end
+
+
+    Language.all.each do |l|
+      l.companies.each do |c|
+        if @user.company == c.name
+          @languages << l
         end
       end
     end
+
+  end
 
   def workstyle
     @user = current_user
   end
 
   def playstyle
+    @user = current_user
+  end
+
+  def personality
     @user = current_user
   end
 
@@ -47,7 +77,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :user_name, :company, :password, :dev_type, :password_confirmation)
+    params.require(:user).permit(:name, :user_name, :company, :password, :dev_type, :password_confirmation, :personality_score, :response_one, :response_two, :response_three)
   end
 
 end

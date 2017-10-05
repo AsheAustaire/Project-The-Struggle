@@ -1,0 +1,10 @@
+<div style='text-align:center; margin-top:150px'>
+
+<%=form_for @user do |f|%>
+  <h1><%=f.label :response_one, "What is most important to you when looking to work for a company?"%></h1>
+  <%=f.select :response_one, ['Culture', 'Work-Life Balance', 'Compensation'] %>
+
+  <%=f.submit%>
+<%end%>
+
+</div>
