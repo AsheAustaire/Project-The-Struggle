@@ -1,17 +1,11 @@
-
-<div style='text-align:center; margin-top:150px'>
-
-
-
-<%= form_for @user do |f| %>
-  <h1><%= f.label :company, "Which Company Would You Like To Work For?" %> </h1>
-  <%= f.text_field :company, list: 'company-name' %>
-  <datalist id="company-name">
-    <% Company.all.each do |company| %>
-      <option value="<%= company.name %>"></option>
-    <% end %>
-  </datalist>
-  <%= f.submit %>
-<% end %>
-
+<div class='container'>
+<div style='text-align:left; margin-top:150px'>
+  <%= form_for @user do |f| %>
+    <h1 style='font-family:questrial'>
+      <%= f.label :company, "Which Company Would You Like To Work For?" %>
+    </h1>
+    <%=f.select :company, @companies,{}, class: "btn btn-secondary dropdown-toggle btn-lg" %>
+    <%=f.submit class: "btn btn-success" %>
+  <% end %>
+</div>
 </div>

@@ -4,9 +4,17 @@ Language.create(name: 'JavaScript', date_created: '1995', latest_version:'ECMASc
 
 Language.create(name: 'CSharp', date_created: '2000', latest_version:'C# 7.0', creator: 'Anders Hejlsberg', short_description: 'C# is a Static imperitive language, which is strongly typed.', dev_type: 'Back-End')
 
-Language.create(name: 'Ruby', date_created: '1995', latest_version:'Ruby 2.4.2', creator: 'Yukihiro Matsumoto', short_description: 'Ruby is a dynamic imperitive language, which is weakly typed.', dev_type: 'Full Stack')
+Language.create(name: 'Ruby', date_created: '1995', latest_version:'Ruby 2.4.2', creator: 'Yukihiro Matsumoto', short_description: 'Ruby is a dynamic imperitive language, which is weakly typed.', dev_type: 'Back-End')
 
-Language.create(name: 'Java', date_created: '1995', latest_version:'Java 8.0', creator: 'James Gosling', short_description: 'Java is a static imperitive language, which is strongly typed.', dev_type: 'Full Stack')
+Language.create(name: 'Java', date_created: '1995', latest_version:'Java 8.0', creator: 'James Gosling', short_description: 'Java is a static imperitive language, which is strongly typed.', dev_type: 'Back-End')
+
+Language.create(name: 'Python', date_created: '1991',  latest_version:'Python 3.6.3', creator: 'Guido van Rossum', short_description: 'Python is a dynamic imperitive language, which is weakly typed.', dev_type: 'Back-end') #5
+
+Language.create(name: 'Go', date_created: '2009', latest_version:'Go 1.9', creator: 'Google', short_description: 'Go is a static imperitive language, which is strongly typed.', dev_type: 'Back-end')
+
+Language.create(name: 'CSS', date_created: '1995', latest_version:'CSS 3.0', creator: 'Bert Bos', short_description: 'CSS is a stylesheet markup language used by most modern web browsers.', dev_type: 'Front-End')
+
+Language.create(name: 'BrainFuck', date_created: '1993', latest_version:'N/A', creator: 'Urban Muller', short_description: 'Brainfuck is a tasteless heartbreaking language, which will devour your soul.', dev_type: 'Back-end')
 
 Editor.create(name: 'Atom', date_created: '2014', latest_version:'1.20.1', creator: 'GitHub', short_description: 'Atom (text editor) Atom is a free and open-source text and source code editor for macOS, Linux, and Microsoft Windows with support for plug-ins written in Node.js, and embedded Git Control, developed by GitHub.')
 
@@ -24,24 +32,28 @@ Company.create({name: 'Microsoft', culture: 7.8, worklife: 7.4, compensation: 8.
 
 CompaniesLanguage.create({company_id: 1, language_id: 4})
 CompaniesLanguage.create({company_id: 1, language_id: 1})
+CompaniesLanguage.create({company_id: 1, language_id: 5})
+CompaniesLanguage.create({company_id: 1, language_id: 6})
 
 CompaniesLanguage.create({company_id: 2, language_id: 1})
 CompaniesLanguage.create({company_id: 2, language_id: 3})
 CompaniesLanguage.create({company_id: 2, language_id: 4})
+CompaniesLanguage.create({company_id: 2, language_id: 5})
 
 CompaniesLanguage.create({company_id: 3, language_id: 1})
 CompaniesLanguage.create({company_id: 3, language_id: 4})
 
+CompaniesLanguage.create({company_id: 2, language_id: 5})
 CompaniesLanguage.create({company_id: 4, language_id: 1})
 CompaniesLanguage.create({company_id: 4, language_id: 4})
 
 CompaniesLanguage.create({company_id: 5, language_id: 2})
 CompaniesLanguage.create({company_id: 5, language_id: 4})
+CompaniesLanguage.create({company_id: 5, language_id: 5})
 
 LanguagesEditor.create({language_id: 1, editor_id: 1})
 LanguagesEditor.create({language_id: 1, editor_id: 2})
 LanguagesEditor.create({language_id: 1, editor_id: 3})
-
 
 LanguagesEditor.create({language_id: 2, editor_id: 1})
 LanguagesEditor.create({language_id: 2, editor_id: 2})
@@ -49,11 +61,25 @@ LanguagesEditor.create({language_id: 2, editor_id: 3})
 
 LanguagesEditor.create({language_id: 3, editor_id: 2})
 
-
 LanguagesEditor.create({language_id: 4, editor_id: 4})
 LanguagesEditor.create({language_id: 4, editor_id: 1})
 LanguagesEditor.create({language_id: 4, editor_id: 2})
 
+LanguagesEditor.create({language_id: 5, editor_id: 1})
+LanguagesEditor.create({language_id: 5, editor_id: 2})
+LanguagesEditor.create({language_id: 5, editor_id: 3})
+
+LanguagesEditor.create({language_id: 6, editor_id: 1})
+LanguagesEditor.create({language_id: 6, editor_id: 2})
+LanguagesEditor.create({language_id: 6, editor_id: 3})
+
+LanguagesEditor.create({language_id: 7, editor_id: 2})
+LanguagesEditor.create({language_id: 7, editor_id: 3})
+LanguagesEditor.create({language_id: 7, editor_id: 1})
+
+LanguagesEditor.create({language_id: 8, editor_id: 2})
+
+
 User.create(name: 'Al', user_name: 'aaa', password: 'aaa', password_confirmation: 'aaa', company: "Google", dev_type: 'Back-End', personality_score: 0)
 
-User.create(name: 'Ashe', user_name: 'TheAshes', password: 'aaa', password_confirmation: 'aaa', company: "Facebook", dev_type: 'Full Stack', personality_score: 0)
+User.create(name: 'Ashe', user_name: 'TheAshes', password: 'aaa', password_confirmation: 'aaa', company: "Facebook", dev_type: 'Front-End', personality_score: 0)

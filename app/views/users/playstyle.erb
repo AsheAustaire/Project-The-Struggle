@@ -1,10 +1,10 @@
-<div style='text-align:center; margin-top:150px'>
-
+<div class='container'>
+<div style='text-align:left; margin-top:150px'>
 <%=form_for @user do |f|%>
   <h1><%=f.label :dev_type, "What type of developer are you?"%></h1>
-  <%=f.select :dev_type, ['Front-End', 'Back-End', 'Full Stack'] %>
+  <%=f.select :dev_type, ['Front-End', 'Back-End'], {}, class: "btn btn-secondary dropdown-toggle btn-lg" %>
 
-  <%=f.submit%>
+  <%=f.submit class: "btn btn-success"%>
 <%end%>
 
 </div>
