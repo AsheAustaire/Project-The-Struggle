@@ -1,63 +1,57 @@
 <div style='padding-top:50px'>
 
-    <div style='text-align:center; font-family:questrial;'>
-        <img src='https://media.giphy.com/media/eCqFYAVjjDksg/giphy.gif' />
-        <h4 style='padding:20px 0 0 0 ; font-family:Yantramanav; font-weight:900'><%=@user.user_name%></h4>
+  <div class='container'>
+    <div class='row' style='margin-bottom:40px'>
+      <div class='col-6' style='text-align:center; font-family:questrial;'>
+        <img style='border-radius:50%; border-style:solid' height="150" width="150" src='https://media.giphy.com/media/xT0GqxOURpu9mmaF7q/giphy.gif' />
+        <h4 style='padding:10px 0 0 0 ; font-family:Yantramanav; font-weight:900'><%=@user.user_name%></h4>
       </div>
 
+      <div class='col'>
+        <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Name:</h4>
+        <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.name%></h6>
 
-      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Name:</h4>   <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.name%></h6>
+        <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Company Preference</h4>
+        <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.company%></h6>
 
-      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Company Preference</h4>   <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.company%></h6>
-
-      <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Developer Type</h4>   <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.dev_type%></h6>
+        <h4 style ='font-size:30px; font-family:Yantramanav; font-weight:900; padding:0px 0px 0px 10px'>Developer Type</h4>
+        <h6 style ='font-size:15px; font-style:bold; padding-left:30px;';><%=@user.dev_type%></h6>
+        </div>
       </div>
     </div>
   </div>
 
-<h3 style='margin:80px; text-align:center'>
-These are important instructions!
-</h3>
+  <div class='container' >
+    <div class='row'>
+      <div class='col-6' style='text-align:center; font-family:questrial;'>
 
+        <h3 style='font-family:yantramanav; font-weight:900;'>
+          RECOMMENDED LANGUAGES
+        </h3>
 
+        <%@languages.each do |language|%>
+          <%if language.dev_type == @user.dev_type%>
 
-<a class="btn btn-success btn-lg btn-block"  href='/workstyle'>WORKSTYLE</a>
-<a class="btn btn-danger btn-lg btn-block" href='/playstyle'>PLAYSTYLE</a>
-<a class="btn btn-info btn-lg btn-block" href='/personality'>PERSONALITY</a>
+            <h1>
+              <!-- <%= image_tag("#{language.name.downcase}.png") %> -->
+              <%= link_to(language.name, language_path(language.id))%>
+            </h1>
 
+          <%end%>
+        <%end%>
 
+        <h3 style='font-family:yantramanav; font-weight:900;'>
+          RECOMMENDED COMPANIES
+        </h3>
 
-<h3 style='margin:100px; text-align:center'>
-RECOMMENDED LANGUAGES
-</h3>
+        <h1><%= @companies.first %> </h1>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <div style='text-align:center'>
-    <%@languages.each do |language|%>
-      <%if language.dev_type == @user.dev_type%>
-      <h1>  <%=link_to(language.name, language_path(language.id))%> </h1>
-      <%end%>
-    <%end%>
+      </div>
+      <div class='col-6'>
+        <a class="btn btn-success btn-lg btn-block"  href='/workstyle'>WORKSTYLE</a>
+        <a class="btn btn-danger btn-lg btn-block" href='/playstyle'>PLAYSTYLE</a>
+        <a class="btn btn-info btn-lg btn-block" href='/personality'>PERSONALITY</a>
+      </div>
     </div>
   </div>
-</div>
-
-
-<h3 style='margin:100px; text-align:center'>
-RECOMMENDED COMPANIES
-</h3>
-
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <div style='text-align:center'>
-    <%@companies.each do |company|%>
-      <h1>  <%=company%> </h1>
-    <%end%>
-    </div>
-  </div>
-
-
-
-
 </div>
