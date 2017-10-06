@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     end
 
     @user.complete_personality_score
-    
+
     if @user.personality_score == 3 || @user.personality_score == 7 || @user.personality_score == 12
       Company.culture_companies.each do |company|
         @companies << company.name
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
     Language.all.each do |l|
       l.companies.each do |c|
-        if @user.company == c.name
+        if @user.company == c.name && l.dev_type == @user.dev_type
           @languages << l
         end
       end
@@ -55,6 +55,11 @@ class UsersController < ApplicationController
 
   def workstyle
     @user = current_user
+    @companies = []
+
+    Company.all.each do |company|
+      @companies << company.name
+    end
   end
 
   def playstyle

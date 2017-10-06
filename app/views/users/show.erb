@@ -28,24 +28,24 @@
         <h3 style='font-family:yantramanav; font-weight:900;'>
           RECOMMENDED LANGUAGES
         </h3>
-
-        <%@languages.each do |language|%>
-          <%if language.dev_type == @user.dev_type%>
-
             <h1>
-              <!-- <%= image_tag("#{language.name.downcase}.png") %> -->
+              <%language = @languages.sample%>
+              <%= image_tag("#{language.name.downcase}.png") %>
               <%= link_to(language.name, language_path(language.id))%>
             </h1>
 
-          <%end%>
-        <%end%>
+
 
         <h3 style='font-family:yantramanav; font-weight:900;'>
           RECOMMENDED COMPANIES
         </h3>
-
-        <h1><%= @companies.first %> </h1>
-
+        <h1>
+            <% company = @companies.sample %>
+              <div style='font-family:questrial'>
+            <%= image_tag("#{company.downcase}.png", size: "46x46")%>
+              <%= company %>
+            </div>
+        </h1>
       </div>
       <div class='col-6'>
         <a class="btn btn-success btn-lg btn-block animated rubberBand" style='-webkit-animation-delay: 4s;-webkit-animation-duration: 3s; margin-bottom:12px;' href='/workstyle'>WORKSTYLE</a>
